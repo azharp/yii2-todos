@@ -33,7 +33,7 @@ $this->registerJsFile(
 
     <div class="todo-create" id="ajax-form">
 
-        <h3>Create Todos</h3>
+        <h3>Create Todo (Ajax)</h3>
 
         <?= $this->render('_form-ajax', [
             'model' => $model,
