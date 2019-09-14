@@ -15,8 +15,18 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Todo', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Todo (Non-Ajax)', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+
+    <div class="todo-create-ajax">
+
+        <h3>Create Todos</h3>
+
+		<?= $this->render('_form-ajax', [
+			'model' => $model,
+		]) ?>
+
+    </div>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
