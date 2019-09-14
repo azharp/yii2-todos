@@ -78,6 +78,20 @@ class TodoController extends Controller
     }
 
     /**
+     * Creates a new Todo model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionCreateAjax()
+    {
+        $model = new Todo();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->asJson($model);
+        }
+    }
+
+    /**
      * Updates an existing Todo model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
@@ -126,5 +140,4 @@ class TodoController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
-
 }

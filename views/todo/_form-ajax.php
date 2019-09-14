@@ -2,7 +2,6 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Todo */
@@ -11,7 +10,9 @@ use yii\helpers\Url;
 
 <div class="todo-form">
 
-    <?php $form = ActiveForm::begin(['action' => Url::to(['todo/create'])]); ?>
+    <?php $form = ActiveForm::begin([
+        'action' => ['create-ajax'],
+    ]); ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
