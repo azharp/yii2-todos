@@ -53,6 +53,7 @@ $config = [
         */
     ],
     'params' => $params,
+    'defaultRoute' => 'todo',
 ];
 
 if (YII_ENV_DEV) {
